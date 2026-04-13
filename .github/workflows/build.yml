@@ -9,10 +9,21 @@ on:
       next_version_minor:
         required: false
         type: string
+        
+  workflow_dispatch:
+    inputs:
+      next_version_major:
+        description: "Major version"
+        required: false
+        type: string
+      next_version_minor:
+        description: "Minor version"
+        required: false
+        type: string
 
 env:
   VCPKG_ROOT: "${{github.workspace}}/dependencies/vcpkg"
-  VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
+  VCPKG_BINARY_SOURCES: 'clear;nuget,ShitHub,readwrite'
   VCPKG_FORCE_DOWNLOADED_BINARIES: true
   
 jobs:
